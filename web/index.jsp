@@ -19,15 +19,15 @@
     
     </head>
     <body >
-      
+        
     <div class="page" id="fondo">
           <form action="procesarLoguin" method="get">
   <div class="container">
-    <div class="left">
+    <div class="left" style="background-color: rgba(255, 255, 255, 0.7);">
       <div class="login">Login</div>
-      <div class="eula">Bienvenido al portal de control de horas sociales!!!</div>
+      <div class="eula" style="color: black">Bienvenido al portal de control de horas sociales!!!</div>
     </div>
-    <div class="right">
+    <div class="right" style="background-color: rgba(25, 25, 25, 0.6);">
      
       <div class="form">
         <label for="Usuario">Usuario</label>

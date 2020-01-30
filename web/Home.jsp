@@ -90,8 +90,14 @@
                                 <p>FORMULARIO FINAL SSE </p>
                             </a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="usuarios.jsp">
+                                <i class="nc-icon nc-single-02"></i>
+                                <p>USUARIOS</p>
+                            </a>
+                        </li>
                       <li>
-                            <a class="nav-link" href="reportes.jsp">
+                            <a class="nav-link" href="#">
                                 <i class="nc-icon nc-notes"></i>
                                 <p>REPORTES</p>
                             </a>

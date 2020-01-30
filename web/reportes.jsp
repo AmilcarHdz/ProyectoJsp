@@ -49,12 +49,7 @@
                             </a>
                         </li>
                         
-                        <li>
-                            <a class="nav-link" href="usuarios.jsp">
-                                <i class="nc-icon nc-single-02"></i>
-                                <p>USUARIOS</p>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a class="nav-link" href="solicitudes.jsp">
                                 <i class="nc-icon nc-single-copy-04"></i>

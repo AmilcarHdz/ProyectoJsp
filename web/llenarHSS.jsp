@@ -108,12 +108,12 @@
                             </a>
                         </li>
                        
-                        <li>
+                        <!--<li>
                             <a class="nav-link" href="reportes.jsp">
                                 <i class="nc-icon nc-notes"></i>
                                 <p>REPORTES</p>
                             </a>
-                        </li>  
+                        </li>-->  
                         <center>
                             <img src="assets/img/faces/3.png" alt="" class="logotipo"/>
                         </center>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Nombre de la clase: ProcesarCoordinador
- * Fecha: 24-ene-2020
+ * Fecha: 25-ene-2020
  * Copyright: ITCA FEPADE
  * @author ServicioSocial
  */
