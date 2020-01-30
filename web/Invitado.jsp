@@ -262,6 +262,6 @@
                                 });
 </script>
 <script src="https://account.snatchbot.me/script.js"></script>
-<script>window.sntchChat.Init(79375)</script>
+
 </html>
 

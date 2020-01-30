@@ -258,7 +258,7 @@
 <script src="assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <script src="https://account.snatchbot.me/script.js">
     
-</script><script>window.sntchChat.Init(79375)</script>
+</script>
 
 </html>
 
