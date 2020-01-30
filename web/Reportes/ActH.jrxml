@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="654" pageHeight="842" columnWidth="614" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM `horarioyact` where CarnetEstudiante=$P{nombre}]]>
+	</queryString>
+	<field name="IdHA" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CarnetEstudiante" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ActRealizar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Objetivo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Meta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Duracion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lunes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Martes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Miercoles" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jueves" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Viernes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sabado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Domingo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NombreEst" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EstadoS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="66" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="9" width="546" height="58"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3. Objetivos Generales y Metas concretas de laActivida a realizar en la institucion En este apartado debera colocar los objetivos y metas de las actividades que realizara y plasmarla en el siguiente cuadro]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="483" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="20" width="145" height="51"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ActRealizar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="20" width="133" height="51"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Objetivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="20" width="150" height="51"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Meta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="20" width="123" height="51"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Duracion}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="162" width="88" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Lunes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="162" width="91" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Martes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="162" width="88" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Miercoles}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="162" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Jueves}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="162" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Viernes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="162" width="78" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Sabado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="546" y="162" width="68" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Domingo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="236" width="322" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NombreEst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="327" width="172" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EstadoS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="45" y="142" width="88" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lunes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="133" y="142" width="91" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Martes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="224" y="142" width="88" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Miercoles]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="312" y="142" width="78" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jueves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="390" y="142" width="78" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Viernes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="468" y="142" width="78" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sabado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="546" y="142" width="68" height="18" forecolor="#FFFFFF" backcolor="#999999"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Domingo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="145" height="20"/>
+				<textElement/>
+				<text><![CDATA[Actividad a realizar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="133" height="20"/>
+				<textElement/>
+				<text><![CDATA[Objetivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="150" height="20"/>
+				<textElement/>
+				<text><![CDATA[Metas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="0" width="123" height="20"/>
+				<textElement/>
+				<text><![CDATA[Duracion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="95" width="551" height="25"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[4.Horario y periodo en el que realizara el servicio social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="142" width="44" height="20"/>
+				<textElement/>
+				<text><![CDATA[Dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="162" width="44" height="20"/>
+				<textElement/>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="191" width="610" height="26"/>
+				<textElement/>
+				<text><![CDATA[Cualquier cambio en el horario en eltranscurso de sus servicio social debe notificarce al coordinador de sse de su escuela Academica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="236" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Por este medio yo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="236" width="185" height="20"/>
+				<textElement/>
+				<text><![CDATA[doy fe que he leido las reglas y ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="256" width="610" height="51"/>
+				<textElement/>
+				<text><![CDATA[recomendaciones que me han brindado en sevicio Social estudianti y que he aprovado mi proyecto de trabajo con el apoyo del coordinador de servicio social asignado a mi escuela academica. Me comprometo a realizar las actividades propuestas en este proyecto de trabajo y de reportar cualquier anomalia o problema a mi Coordinador inmediato o a la coordinadora General de SSE a la brevedad posible.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="327" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="363" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[F:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="400" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre:_________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="363" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[F:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="440" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[en la institucion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="420" width="199" height="20"/>
+				<textElement/>
+				<text><![CDATA[Encargado de supervisar el servicio social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="420" width="224" height="20"/>
+				<textElement/>
+				<text><![CDATA[Coordinador de SSE de Escuela Academica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="400" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre:_________________________]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="516" y="6" width="36" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="342" y="6" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

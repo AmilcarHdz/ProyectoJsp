@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportesHoras1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2"/>
+	<style name="Title" isDefault="false" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" isDefault="false" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" isDefault="false" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" isDefault="false" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[]]></conditionExpression>
+			<style isDefault="false" style="Row" mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="nombre" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    fechaAct,Actividad,HorasD
+FROM
+      detallehoras
+WHERE
+     IdRegHoras = $P{nombre}]]>
+	</queryString>
+	<field name="fechaAct" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Actividad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HorasD" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="267" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="48" width="554" height="47" backcolor="#000000"/>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="47" y="95" width="507" height="32" forecolor="#000000" backcolor="#CC0000"/>
+				<staticText>
+					<reportElement x="0" y="12" width="361" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[CONTROL DIARIO DE ACTIVIDADES DE SERVICIO SOCIAL]]></text>
+				</staticText>
+			</frame>
+			<image hAlign="Center">
+				<reportElement positionType="FixRelativeToBottom" x="467" y="0" width="89" height="65"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\Rony\\Documents\\NetBeansProjects\\Proyectojsp\\ControlHoras\\web\\Images\\50-Aniversario-01.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="48" width="552" height="47"/>
+				<textElement>
+					<font size="28" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Escuela Especializada en Inegieria ITCA-Fepade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="149" width="499" height="20"/>
+				<textElement/>
+				<text><![CDATA[NOMBRE COMPLETO DEL ESTUDIANTE:__________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="179" width="499" height="20"/>
+				<textElement/>
+				<text><![CDATA[SEDE ITCA A LA QUE PERTENECE:_______________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="208" width="499" height="20"/>
+				<textElement/>
+				<text><![CDATA[ESCUELA ACADEMICA:________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="247" width="499" height="20"/>
+				<textElement/>
+				<text><![CDATA[CARRERA:___________________________________________________________________________]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="35" y="8" width="185" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[fechaAct]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="223" y="7" width="157" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Actividad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="356" y="7" width="142" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[HorasD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="514" y="7" width="36" height="18"/>
+				<textElement/>
+				<text><![CDATA[FIRMA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="35" y="0" width="185" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{fechaAct}.toString()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="220" y="0" width="172" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{Actividad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="356" y="0" width="158" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{HorasD}.toString()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="356" y="4" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="171" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="129" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="18" y="51" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre:_________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="71" width="199" height="20"/>
+				<textElement/>
+				<text><![CDATA[Encargado de supervisar el servicio social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="91" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[en la institucion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="51" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre:_________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="71" width="224" height="20"/>
+				<textElement/>
+				<text><![CDATA[Coordinador de SSE de Escuela Academica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="14" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[F:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="14" width="202" height="20"/>
+				<textElement/>
+				<text><![CDATA[F:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
