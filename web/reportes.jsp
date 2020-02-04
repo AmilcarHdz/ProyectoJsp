@@ -113,7 +113,7 @@
  if (sesion.getAttribute("user")!=null && sesion.getAttribute("nivel")!=null) {
          usuario=sesion.getAttribute("user").toString();
          nivel=sesion.getAttribute("nivel").toString();
-         out.print("<a href='index.jsp?cerrar=true'><button class='btn btn-danger' style='color: white' >Cerrar Sesion</button></a>");
+         out.print("<a href='index.jsp?cerrar=true'><button class='btn btn-primary' style='color: white' >Cerrar Sesion</button></a>");
      }
  else{
      response.sendRedirect("index.jsp");

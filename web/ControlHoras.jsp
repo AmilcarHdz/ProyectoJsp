@@ -109,12 +109,12 @@
                                 <p>CONTROL HORAS</p>
                             </a>
                         </li>
-                        <!--<li>
+                        <li>
                             <a class="nav-link" href="reportes.jsp">
                                 <i class="nc-icon nc-notes"></i>
                                 <p>REPORTES</p>
                             </a>
-                        </li>-->                       
+                        </li>                     
                             <!--Insercion de logotipo en nuestro menu lateral-->
                             <center><!--centramos la imagen-->
                                 <img src="assets/img/faces/3.png" alt="" class="logotipo"/><!--Imagen que sive como logotipo-->
