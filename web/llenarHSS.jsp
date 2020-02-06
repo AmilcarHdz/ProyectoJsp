@@ -421,6 +421,66 @@
                                 </div>
 
                             </div>
+                            <div class="row" style="color: white">
+                                <div class="col-md-12">
+                                    <br><br>
+                                    <table class="table table-dark table-hover" style=" background-color: captiontext; border-radius: 20px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Sede</th>
+                                                <th>Estudiante</th>
+                                                <th>Insititucion</th>
+                                                <th>Destinatario</th>
+                                                <th>Comentarios</th>
+                                                <th>EstadoSolicitud</th>
+                                                <th>Carnet</th>
+                                                <th>Fecha</th>
+                                                <th>estado</th>
+                                                <th>Seleccionar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%
+                                            List<Sse> listR = daoS.mostrarSseAEliminado();
+                                                    for (Sse es : listR) {
+                                            %>
+                                            <tr>
+                                                <td><%= es.getIdSse()%></td>
+                                                <td><%= es.getSede()%></td>
+                                                <td><%= es.getNombreEstudiante()%></td>
+                                                <td><%= es.getNombreIns()%></td>
+                                                <td><%= es.getDestinatarios()%></td>
+                                                <td><%= es.getComentarios()%></td>
+                                                <td><%= es.getEstadoSol()%></td>
+                                                <td><%= es.getCarnetEstudiante()%></td>
+                                                <td><%= es.getFecha()%></td>
+                                                <td><%= es.getEstado()%></td>
+
+
+                                                <td><a href="javascript:cargar
+                                                       ('<%= es.getIdSse()%>',
+                                                       '<%= es.getSede()%>',
+                                                       '<%= es.getNombreEstudiante()%>',                                                       
+                                                       '<%= es.getNombreIns()%>',
+                                                        '<%= es.getComentarios()%>',
+                                                       '<%= es.getDestinatarios()%>',  
+                                                       '<%= es.getEstadoSol()%>',
+                                                       '<%= es.getCarnetEstudiante()%> ',
+                                                       '<%= es.getFecha()%> ',
+                                                       '<%= es.getEstado()%>')">Seleccionar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    }
+                                                
+                                            %>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
                        
                     </div>
                 </div>

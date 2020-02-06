@@ -313,7 +313,7 @@
                                 
                                 <div class="col-md-12">
                                     <br><br>
-                                    <h3>Registros eliminados</h3>
+                                    <h3>Usuarios eliminados</h3>
                                     <table  class="table table-dark table-hover" style="background-color: captiontext; border-radius: 10px;">
                                         <thead>
                                             <tr>
