@@ -182,7 +182,7 @@
                                         <option value="Regional Zacatecoluca">Regional Zacatecoluca</option>
                                     </select>
                                     <p>Nombre completo </p> 
-                                    <input type="text" class="form-control" pattern="[A-Za-z]*" name="txtNombre" id="txtNombre" required="true">            
+                                    <input type="text" class="form-control" pattern="[a-zA-Z]+[ ][a-zA-Z]+" name="txtNombre" id="txtNombre" required="true">            
                                      <label id="error" style="color:red"></label><br>
 
                                     
@@ -360,23 +360,7 @@
                     </div>  
                     <br>
                     <div class="container-fluid" style="background-color: currentColor; border-radius: 20px; ">
-                        <form action="#" name="fmrbuscar" method="post">
-                            <div class="row" style="color: white">
-
-                                <div class="col-md-6 ">
-                                    <br>
-                                    Carnet Estudiante<input type="text" name="txtCarnetBus"  class=" required form-control " required="true" value=" "/>
-                                    <br>
-                                     <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" class="btn btn-primary" >                             
-                                    <input type="reset" name="btnLimpiar" value="Limpiar" class="btn btn-danger"><br> <br>
-                                </div>
-                                <div class="col-md-6">              
-                                    <br>
-
-                                    <br>
-                                </div>
-
-                            </div>
+                        
                             <div class="row" style="color: white">
                                 <div class="col-md-12">
                                     <br><br>
@@ -398,9 +382,7 @@
                                         </thead>
                                         <tbody>
                                             <%
-                                                
-
-                                                    List<Sse> list = daoS.mostrarSseA();
+                                            List<Sse> list = daoS.mostrarSseA();
                                                     for (Sse es : list) {
                                             %>
                                             <tr>
@@ -431,15 +413,15 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                    
-                                                }
+                                                    }
+                                                
                                             %>
                                         </tbody>
                                     </table>
                                 </div>
 
                             </div>
-                        </form>
+                       
                     </div>
                 </div>
             </div>

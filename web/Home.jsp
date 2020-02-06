@@ -60,12 +60,12 @@
                             </a>
                         </li>                       
                         
-                        <li>
+<!--                        <li>
                             <a class="nav-link" href="solicitudes.jsp">
                                 <i class="nc-icon nc-single-copy-04"></i>
                                 <p>SOLICITUDES </p>
                             </a>
-                        </li>
+                        </li>-->
                         <li >
                             <a class="nav-link" href="llenarHSS.jsp">
                                 <i class="nc-icon nc-tap-01"></i>
