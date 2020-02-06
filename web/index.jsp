@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Estilo/Login.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
     </head>
     <body >
@@ -62,7 +63,7 @@
                 response.sendRedirect("Invitado.jsp");
             break;
             default:
-                out.write("Usuario no exite o contraseña incorrecta");
+                out.write("<script type='text/javascript'>Swal.fire('Error','Usuario o contraseña son incorrectas','warning')</script>");
                 break;
         }
     }

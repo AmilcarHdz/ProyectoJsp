@@ -57,6 +57,47 @@ public class DaoFinSse extends Conexion {
         }
         return list;
     }
+     public List<FinSse> mostrarSse() throws Exception {
+        ResultSet res;
+        List<FinSse> list = new ArrayList();
+        try {
+            this.conectar();
+            String sql = "SELECT * FROM `finalsse` WHERE Estado=1";
+
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            res = pre.executeQuery();
+            while (res.next()) {
+                FinSse sse = new FinSse();
+                sse.setIdF(res.getInt("IdF"));
+                sse.setEstudiante(res.getString("Estudiante"));
+                sse.setEscuela(res.getString("Escuela"));
+                sse.setSede(res.getString("Sede"));
+                sse.setCarrera(res.getString("Carrera"));
+                sse.setCarnet(res.getInt("Carnet"));
+                sse.setJornada(res.getString("Jornada"));
+                sse.setAnioEstudio(res.getString("AnioEstudio"));
+                sse.setTelefonoEst(res.getString("TelefonoEst"));
+                sse.setCorreo(res.getString("Correo"));
+                sse.setInstitucion(res.getString("Institucion"));
+                sse.setDireccion(res.getString("Direccion"));
+                sse.setTelefonoIns(res.getString("TelefonoIns"));
+                sse.setSitioWeb(res.getString("SitioWeb"));
+                sse.setFechaInicio(res.getString("FechaInicio"));
+                sse.setFechaFin(res.getString("FechaFin"));
+                sse.setOservaciones(res.getString("Observaciones"));
+                sse.setEncargadoIns(res.getString("EncargadoIns"));
+                sse.setCoordinador(res.getString("Coordinador"));
+                sse.setEstado(res.getInt("Estado"));
+
+                list.add(sse);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return list;
+    }
 
     //Insertar FinSse
     public void insertarSse(FinSse sse) throws Exception {

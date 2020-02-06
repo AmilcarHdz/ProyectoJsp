@@ -601,7 +601,7 @@
                     </div>  
                     <br>
                     <div class="container-fluid" style="background-color: currentColor; border-radius: 20px; ">
-                        <form action="#" name="fmrbuscar" method="post">
+<!--                        <form action="#" name="fmrbuscar" method="post">
                             <div class="row" style="color: white">
 
                                 <div class="col-md-6 ">
@@ -659,7 +659,7 @@
                                     <br>
                                 </div>
 
-                            </div>
+                            </div>-->
                             <div class="row" style="color: white">
                                 <div class="col-md-12">
                                     <br><br>
@@ -680,10 +680,8 @@
                                         </thead>
                                         <tbody>
                                             <%
-                                                if (request.getParameter("btnBuscarZ") != null) {
-                                                    int see = Integer.parseInt(request.getParameter("txtCarnetBusZ"));
 
-                                                    List<FinSse> list = daof.mostrarFinSse(see);
+                                                    List<FinSse> list = daof.mostrarSse();
                                                     for (FinSse es : list) {
                                             %>
                                             <tr>
@@ -725,7 +723,7 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                    }
+                                                    
 
                                                 }
                                             %>
@@ -734,7 +732,7 @@
                                 </div>
 
                             </div>
-                        </form>
+<!--                  //       </form>-->
                     </div>
                 </div>
             </div>
