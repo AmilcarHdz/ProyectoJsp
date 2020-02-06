@@ -41,6 +41,33 @@ public class DaoControlHoras extends Conexion {
         }
         return list;
     }
+     public List<ControlHoras> mostrarHorA() throws Exception {
+        ResultSet res;
+        List<ControlHoras> list = new ArrayList();
+        try {
+            this.conectar();
+            String sql = "SELECT * FROM `detallehoras` WHERE  estado=1";
+
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            
+            res = pre.executeQuery();
+            while (res.next()) {
+                ControlHoras Ch = new ControlHoras();
+                Ch.setIdLlenar(res.getInt("IdDet"));
+                Ch.setIdRHoras(res.getInt("IdRegHoras"));
+                Ch.setFechaAct(res.getString("fechaAct"));
+                Ch.setActividad(res.getString("Actividad"));
+                Ch.setHorasD(Double.parseDouble(res.getString("HorasD")));
+                Ch.setEstadoDetalleH(res.getInt("estado"));
+                list.add(Ch);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return list;
+    }
 //mostrar registro horas
     public List<ControlHoras> mostrarHoaras() throws Exception {
         ResultSet res;
@@ -78,6 +105,33 @@ public class DaoControlHoras extends Conexion {
             String sql = "SELECT * FROM `llenar` WHERE  estado=1  and IdEstudiante=?";
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, co.getIdEstudiante());
+            res = pre.executeQuery();
+            while (res.next()) {
+                ControlHoras Ch = new ControlHoras();
+                Ch.setIdRegistroHoras(res.getInt("IdRegistroHoras"));
+                Ch.setSedeEstudio(res.getString("sedeEstudio"));
+                Ch.setNombreEstudiante(res.getString("nombreEstudiante"));
+                Ch.setEscuela(res.getString("EscuelaP"));
+                Ch.setNombreCarrera(res.getString("nombreCarrera"));
+                Ch.setIdEstudiante(res.getInt("IdEstudiante"));
+                Ch.setEstadollenar(res.getInt("estado"));
+                list.add(Ch);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return list;
+    }
+    public List<ControlHoras> mostrarHoarasBB() throws Exception {
+        ResultSet res;
+        List<ControlHoras> list = new ArrayList();
+        try {
+            this.conectar();
+            String sql = "SELECT * FROM `llenar` WHERE  estado=1";
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+           
             res = pre.executeQuery();
             while (res.next()) {
                 ControlHoras Ch = new ControlHoras();

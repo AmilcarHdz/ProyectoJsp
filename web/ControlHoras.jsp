@@ -302,7 +302,7 @@
                         </form>
                     </div><br><br>
                     <div class="container-fluid" style=" background-color: currentColor; border-radius: 20px; " >
-                        <form action="#" name="frmbus" method="get"><br>
+<!--                        <form action="#" name="frmbus" method="get"><br>
                             <div class="row" style="color: white">
                                 <div class="col-md-6">
                                     Carnet Estudiante
@@ -350,7 +350,7 @@
                                 
                                 
                                 
-                            </div>
+                            </div>-->
                             <div class="row" style="color: white">
                                 <div class="col-md-12">
                                     <br><br>
@@ -369,9 +369,8 @@
                                         </thead>
                                         <tbody>
                                             <%
-                                                if (request.getParameter("btnBuscar") != null) {
-                                                    Ch.setIdEstudiante(Integer.parseInt(request.getParameter("txtCarnetBus")));
-                                                    List<ControlHoras> list = daoH.mostrarHoarasB(Ch);
+                                                
+                                                    List<ControlHoras> list = daoH.mostrarHoarasBB();
                                                     for (ControlHoras co : list) {
                                             %>
                                             <tr>
@@ -394,14 +393,14 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                    }
+                                                    
                                                 }
                                             %>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                        </form>                                                                            
+<!--                        </form>                                                                            -->
                     </div><br><br>
                     <div class="container-fluid" style=" background-color: currentColor; border-radius: 20px; " >
                         <form action="procesarControlHoras" name="frmAct"  method="POST">
@@ -492,7 +491,7 @@
                     <br>
                     <br>
                     <div class="container-fluid" style=" background-color: currentColor; border-radius: 20px; " >
-                        <form action="#"name="frmss" method="get" ><br>
+<!--                        <form action="#"name="frmss" method="get" ><br>
                             <div class="row" style="color: white">
                                 <div class="col-md-6">
                                     Carnet Estudiante
@@ -551,7 +550,7 @@
                                 
                                 
                                 
-                            </div>
+                            </div>-->
                             <div class="row" style="color: white">
                                 <div class="col-md-12">
                                     <br><br>
@@ -568,13 +567,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <%
-                                                if (request.getParameter("btnBuscarAct") != null) {
-                                                    int ca = Integer.parseInt(request.getParameter("txtCarnetBusAct"));
-                                                    int cw = daoH.buscarHoras(ca);
-                                                    if (daoH.buscarHoras(ca) > 0) {
-                                                        List<ControlHoras> list = daoH.mostrarHorACT(cw);
-                                                        for (ControlHoras co : list) {
+                                            <%  
+                                              List<ControlHoras> list2 = daoH.mostrarHorA();
+                                              for (ControlHoras co : list2) {
                                             %>
                                             <tr>
                                                 <td><%= co.getIdLlenar()%></td>
@@ -585,7 +580,7 @@
                                                 <td><%= co.getEstadoDetalleH()%></td>
                                                 <td><a href="javascript:cargar2
                                                        ('<%= co.getIdLlenar()%>',
-                                                       '<%= ca%>',
+                                                       '<%= co.getIdRHoras() %>',
                                                        '<%= co.getFechaAct()%>',
                                                        '<%= co.getActividad()%>',
                                                        '<%= co.getHorasD()%>',
@@ -594,15 +589,15 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                        }
-                                                    }
+                                                        
+                                                    
                                                 }
                                             %>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                        </form>                                                                            
+<!--                        </form>                                                                            -->
                     </div>
                 </div>
             </div>
