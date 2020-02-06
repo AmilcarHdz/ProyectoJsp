@@ -185,25 +185,25 @@ public class DaoSse extends Conexion{
       try
       {
           this.conectar();
-          String sql="SELECT *FROM sse where estado=1 ";
+          String sql="SELECT * FROM sse where estado=1";
       
           PreparedStatement pre=this.getCon().prepareStatement(sql);
         
           res=pre.executeQuery();          
           while(res.next())
           {
-              Sse see=new Sse();             
-              see.setIdSse(res.getInt   ("IdSse"));
-              see.setSede(res.getString("Sede"));
-              see.setNombreEstudiante(res.getString("NombreEstudiante"));
-              see.setNombreIns(res.getString("NombreInstitucion"));
-              see.setDestinatarios(res.getString("Destinatario"));
-              see.setComentarios(res.getString("Comentarios"));
-              see.setEstadoSol(res.getString("EstadoSolicitud"));
-              see.setCarnetEstudiante(res.getInt   ("CarnetEstudiante"));
-              see.setFecha(res.getString("fecha"));
-              see.setEstado(res.getInt   ("estado"));
-              list.add(see);
+              Sse see1=new Sse();             
+              see1.setIdSse(res.getInt("IdSse"));
+              see1.setSede(res.getString("Sede"));
+              see1.setNombreEstudiante(res.getString("NombreEstudiante"));
+              see1.setNombreIns(res.getString("NombreInstitucion"));
+              see1.setDestinatarios(res.getString("Destinatario"));
+              see1.setComentarios(res.getString("Comentarios"));
+              see1.setEstadoSol(res.getString("EstadoSolicitud"));
+              see1.setCarnetEstudiante(res.getInt("CarnetEstudiante"));
+              see1.setFecha(res.getString("fecha"));
+              see1.setEstado(res.getInt("estado"));
+              list.add(see1);
           }
       }
       catch(Exception e)

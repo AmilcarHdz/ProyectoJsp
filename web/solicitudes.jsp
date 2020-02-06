@@ -431,7 +431,6 @@
                                                 <td><%= es.getFecha()%></td>
                                                 <td><%= es.getEstado()%></td>
 
-
                                                 <td><a href="javascript:cargar
                                                        ('<%= es.getIdSse()%>',
                                                        '<%= es.getSede()%>',
