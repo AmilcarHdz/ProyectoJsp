@@ -51,10 +51,15 @@ public class ProcesarUsuario extends HttpServlet {
                 us.setCodigoU(Integer.parseInt(request.getParameter("txtCod")));              
                 daoU.modificarUsuario(us);
                 msj = "Datos Modificados correctamente";
-            } else {
+            } else if(request.getParameter("btnEliminar")!=null) {
                 us.setCodigoU(Integer.parseInt(request.getParameter("txtCod")));             
                daoU.EliminadoLogico(us);
                 msj = "Datos eliminados correctamente";
+            }
+            else if(request.getParameter("btnRecuperar")!=null){
+                us.setCodigoU(Integer.parseInt(request.getParameter("txtCod")));
+                daoU.recuperarEliminadoLogico(us);
+                msj="Datos recuperados correctamente";
             }
 
             rd = request.getRequestDispatcher("usuarios.jsp");

@@ -97,7 +97,7 @@
                             </a>
                         </li>
                       <li>
-                            <a class="nav-link" href="#">
+                          <a class="nav-link" href="reportes.jsp">
                                 <i class="nc-icon nc-notes"></i>
                                 <p>REPORTES</p>
                             </a>

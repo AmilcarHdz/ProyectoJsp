@@ -202,6 +202,7 @@
                                     <input type="submit" onclick="return validar();" name="btnInsertar" id="btnInsertar" value="Insertar" class="btn btn-primary">
                                     <input type="submit" name="btnModificar" value="Modificar" class="btn btn-dark">
                                     <input type="submit" name="btnEliminar" value="Eliminar" class="btn btn-danger">
+                                    <input type="submit" name="btnRecuperar" value="Recuperar dato" class="btn btn-secondary">
                                     <input type="reset" name="btnLimpiar" value="Limpiar" class="btn btn-facebook">
                                     <input type="text" name="txtEstado"  id="txtEstado" class="required form-control  " hidden="true" value="1"  /><br>
                                 </div>
@@ -295,7 +296,51 @@
                                                 <td><a href="javascript:cargar
                                                        (<%= u.getCodigoU()%>,
                                                        '<%= u.getUsuario()%>',
-                                                      ' <%= u.getContrasenia()%>',
+                                                       ' <%= u.getContrasenia()%>',
+                                                       '<%= u.getPrivilegio()%>','<%= u.getEstado()%>')">Seleccionar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                }
+                                            %>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="row" style="color: white">
+                                
+                                <div class="col-md-12">
+                                    <br><br>
+                                    <h3>Registros eliminados</h3>
+                                    <table  class="table table-dark table-hover" style="background-color: captiontext; border-radius: 10px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Id Usuario</th>
+                                                <th>Nombre de usuario</th>
+                                                <th>Password</th>
+                                                <th>Privilegios</th>
+                                                <th>Estado</th>
+                                                <th>Seleccionar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%
+                                                List<Usuario> listR = daoU.mostrarUsuarioEliminado();
+                                                for (Usuario u : listR) {
+                                            %>
+                                            <tr>
+                                                <td><%= u.getCodigoU()%></td>
+                                                <td><%= u.getUsuario()%></td>
+                                                <td><%= u.getContrasenia()%></td>
+                                                <td><%= u.getPrivilegio()%></td>
+                                                <td><%= u.getEstado()%></td>
+
+                                                <td><a href="javascript:cargar
+                                                       (<%= u.getCodigoU()%>,
+                                                       '<%= u.getUsuario()%>',
+                                                       ' <%= u.getContrasenia()%>',
                                                        '<%= u.getPrivilegio()%>','<%= u.getEstado()%>')">Seleccionar
                                                     </a>
                                                 </td>
