@@ -89,6 +89,44 @@ public class DaoHorarioYAct extends Conexion {
         }
         return list;
     }
+     
+    public List<HorarioYAct> mostraHorarioEliminado() throws Exception {
+        ResultSet res;
+        List<HorarioYAct> list = new ArrayList();
+        try {
+            this.conectar();
+            String sql = "SELECT * FROM `horarioyact` WHERE estado=0";
+
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            
+            res = pre.executeQuery();
+            while (res.next()) {
+                HorarioYAct Hy = new HorarioYAct();
+                Hy.setIdA(res.getInt("IdHA"));
+                Hy.setCarneEstudiante(res.getInt("CarnetEstudiante"));
+                Hy.setActR(res.getString("ActRealizar"));
+                Hy.setObjetivo(res.getString("Objetivo"));
+                Hy.setMeta(res.getString("Meta"));
+                Hy.setDuracion(res.getInt("Duracion"));
+                Hy.setLunes(res.getString("Lunes"));
+                Hy.setMartes(res.getString("Martes"));
+                Hy.setMiercoles(res.getString("Miercoles"));
+                Hy.setJueves(res.getString("Jueves"));
+                Hy.setViernes(res.getString("Viernes"));
+                Hy.setSabado(res.getString("Sabado"));
+                Hy.setDomingo(res.getString("Domingo"));
+                Hy.setNombreEstudiante(res.getString("NombreEst"));
+                Hy.setEstadoS(res.getString("EstadoS"));
+                Hy.setEstado(res.getInt("estado"));
+                list.add(Hy);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return list;
+    }
     //Insertar HorasYAct
 
     public void insertarYAct(HorarioYAct co) throws Exception {
@@ -122,7 +160,7 @@ public class DaoHorarioYAct extends Conexion {
     public void modificarCH(HorarioYAct co) throws Exception {
         try {
             this.conectar();
-            String sql = "UPDATE `horarioyact` SET `CarnetEstudiante`=?,`ActRealizar`=?,`Objetivo`=?,`Meta`=?,`Duracion`=?,`Lunes`=?,`Martes`=?,`Miercoles`=?,`Jueves`=?,`Viernes`=?,`Sabado`=?,`Domingo`=?,`NombreEst`=?,`EstadoS`=?,`estado`=? WHERE `IdHA`=?";
+            String sql = "UPDATE `horarioyact` SET `CarnetEstudiante`=?,`ActRealizar`=?,`Objetivo`=?,`Meta`=?,`Duracion`=?,`Lunes`=?,`Martes`=?,`Miercoles`=?,`Jueves`=?,`Viernes`=?,`Sabado`=?,`Domingo`=?,`NombreEst`=?,`EstadoS`=? WHERE `IdHA`=?";
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, co.getCarneEstudiante());
             pre.setString(2, co.getActR());
@@ -138,8 +176,7 @@ public class DaoHorarioYAct extends Conexion {
             pre.setString(12, co.getDomingo());
              pre.setString(13, co.getNombreEstudiante());
              pre.setString(14,co.getEstadoS());
-            pre.setInt(15, 1);
-            pre.setInt(16,co.getIdA());
+            pre.setInt(15,co.getIdA());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -169,6 +206,20 @@ public class DaoHorarioYAct extends Conexion {
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setInt(1, 0);
             pre.setInt(2, co.getIdA());
+            pre.executeUpdate();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+    }
+    //Eliminado Logico
+     public void recuperarEliminadoLogico(HorarioYAct co) throws Exception {
+        try {
+            this.conectar();
+            String sql = "UPDATE `horarioyact` SET `estado`=1 WHERE `IdHA`=?";
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            pre.setInt(1, co.getIdA());
             pre.executeUpdate();
         } catch (Exception e) {
             throw e;

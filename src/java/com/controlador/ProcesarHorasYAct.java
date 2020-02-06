@@ -92,6 +92,12 @@ public class ProcesarHorasYAct extends HttpServlet {
                 msj = "Datos Eliminados correctamente";
                 rd = request.getRequestDispatcher("HorasYAct.jsp");
             }
+             if (request.getParameter("btnRecuperar") != null) {
+                c.setIdA(Integer.parseInt(request.getParameter("txtCodigo")));
+                dc.recuperarEliminadoLogico(c);
+                msj = "Datos recuperados correctamente";
+                rd = request.getRequestDispatcher("HorasYAct.jsp");
+            }
   request.setAttribute("msj", msj);
         } catch (Exception e) {
         }

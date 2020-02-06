@@ -217,11 +217,11 @@
 
                                 </div>
                                 <div class="col-md-12"> <br>        
-                                  
+                                    <h3>Horario</h3>
                                     <table class="table table-dark table-hover" style=" background-color: captiontext; border-radius: 20px; ">
                                          
                                         <thead>
-                                             <h3>Horario</h3>
+                                             
                                             <tr>
                                                 <th>Lunes</th>
                                                 <th>Martes</th>
@@ -255,6 +255,7 @@
                                     <input type="submit" onclick="return validar();" name="btnInsertar" id="btnInsertar" value="Insertar" class="btn btn-primary">
                                     <input type="submit" name="btnModificar" value="Modificar" class="btn btn-dark">
                                     <input type="submit" name="btnEliminar" value="Eliminar" class="btn btn-danger">
+                                    <input type="submit" name="btnRecuperar" value="Recuperar regisros" class="btn btn-danger">
                                     <input type="reset" name="btnLimpiar" value="Limpiar" class="btn btn-facebook">
                                     <br><br>
                                 </div>
@@ -687,6 +688,70 @@
                                                 
                                                     List<HorarioYAct> list = daoH.mostraHorario();
                                                     for (HorarioYAct co : list) {
+                                            %>
+                                            <tr>
+                                                <td><%= co.getCarneEstudiante()%></td>                                               
+                                                <td><%= co.getLunes()%></td>
+                                                <td><%= co.getMartes()%></td>
+                                                <td><%= co.getMiercoles()%></td>
+                                                <td><%= co.getJueves()%></td>
+                                                <td><%= co.getViernes()%></td>
+                                                <td><%= co.getSabado()%></td>
+                                                <td><%= co.getDomingo()%></td>
+                                                <td><%= co.getNombreEstudiante()%></td>
+                                                <td><%= co.getEstadoS()%></td>
+                                                <td>
+                                                    <a href="javascript:cargar
+                                                       ('<%= co.getIdA()%>',
+                                                       '<%= co.getCarneEstudiante()%>',
+                                                       '<%= co.getActR()%>',
+                                                       '<%= co.getObjetivo()%>',
+                                                       '<%= co.getMeta()%>',
+                                                       '<%= co.getDuracion()%>',
+                                                       '<%= co.getLunes()%>',
+                                                       '<%= co.getMartes()%>',
+                                                       '<%= co.getMiercoles()%>',
+                                                       '<%= co.getJueves()%>',
+                                                       '<%= co.getViernes()%>',
+                                                       '<%= co.getSabado()%>',
+                                                       '<%= co.getDomingo()%>',
+                                                       '<%= co.getNombreEstudiante()%>',
+                                                       '<%= co.getEstadoS()%>',
+                                                       '<%= co.getEstado()%>',)">Seleccionar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <%
+                                                    
+                                                }
+                                            %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                    <br><br>
+                                    <table class="table table-dark table-hover" style=" background-color: captiontext; border-radius: 20px;">
+                                        <thead>
+                                            <tr>                                                
+                                                <th>Carnet</th>                                                                                           
+                                                <th>Lunes</th>
+                                                <th>Martes</th>   
+                                                <th>Miercoles</th>   
+                                                <th>Jueves</th>   
+                                                <th>Viernes</th>   
+                                                <th>Sabado</th> 
+                                                <th>Domingo</th> 
+                                                <th>Estudiante</th>
+                                                <th>Estado Proyecto</th>                                                    
+                                                <th>Seleccionar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%
+                                                
+                                                    List<HorarioYAct> listR = daoH.mostraHorarioEliminado();
+                                                    for (HorarioYAct co : listR) {
                                             %>
                                             <tr>
                                                 <td><%= co.getCarneEstudiante()%></td>                                               
