@@ -398,10 +398,9 @@
                                         </thead>
                                         <tbody>
                                             <%
-                                                if (request.getParameter("btnBuscar") != null) {
-                                                    int seee=Integer.parseInt(request.getParameter("txtCarnetBus"));
+                                                
 
-                                                    List<Sse> list = daoS.mostrarSse(seee);
+                                                    List<Sse> list = daoS.mostrarSseA();
                                                     for (Sse es : list) {
                                             %>
                                             <tr>
@@ -432,7 +431,7 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                    }
+                                                    
                                                 }
                                             %>
                                         </tbody>
