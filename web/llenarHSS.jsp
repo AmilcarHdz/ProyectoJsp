@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
         <!-- CSS Files -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet" type="text/css"/>
         <!-- CSS Just for demo purpose, don't include it in your project -->
         <link href="assets/css/demo.css" rel="stylesheet" type="text/css"/>

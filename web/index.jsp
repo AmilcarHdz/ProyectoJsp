@@ -34,7 +34,7 @@
         <input type="text" id="Usuario" name="txtUsuario">
         <label for="password">Password</label> 
         <input type="password" id="password" name="txtPassword" >
-        <input type="submit" id="submit" value="Submit" name="btnEnviar">
+        <input type="submit" id="submit" value="Iniciar Sesion" name="btnEnviar">
       </div>
     </div>
   </div>
