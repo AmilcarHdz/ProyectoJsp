@@ -610,7 +610,7 @@
                         </form>
                     </div><br><br>
                     <div class="container-fluid" style=" background-color: currentColor; border-radius: 20px;"  >
-                        <form action="#" name="frmaa" method="get"><br>
+<!--                        <form action="#" name="frmaa" method="get"><br>
                             <div class="row" style="color: white">
                                 <div class="col-md-6">
                                     Carnet Estudiante
@@ -662,7 +662,7 @@
                                 
                                 
                                 
-                            </div>
+                            </div>-->
                             <div class="row" style="color: white">
                                 <div class="col-md-12">
                                     <br><br>
@@ -684,10 +684,8 @@
                                         </thead>
                                         <tbody>
                                             <%
-                                                if (request.getParameter("btnBuscar") != null) {
-                                                 
-                                                    int es= Integer.parseInt(request.getParameter("txtCarnetBus"));
-                                                    List<HorarioYAct> list = daoH.mostrarHorHYA(es);
+                                                
+                                                    List<HorarioYAct> list = daoH.mostraHorario();
                                                     for (HorarioYAct co : list) {
                                             %>
                                             <tr>
@@ -723,14 +721,14 @@
                                                 </td>
                                             </tr>
                                             <%
-                                                    }
+                                                    
                                                 }
                                             %>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                        </form>                                                                            
+                                                                                               
                     </div><br><br>
 
                     <br>

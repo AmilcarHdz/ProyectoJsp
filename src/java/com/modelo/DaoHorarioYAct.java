@@ -52,6 +52,43 @@ public class DaoHorarioYAct extends Conexion {
         }
         return list;
     }
+     public List<HorarioYAct> mostraHorario() throws Exception {
+        ResultSet res;
+        List<HorarioYAct> list = new ArrayList();
+        try {
+            this.conectar();
+            String sql = "SELECT * FROM `horarioyact` WHERE estado=1";
+
+            PreparedStatement pre = this.getCon().prepareStatement(sql);
+            
+            res = pre.executeQuery();
+            while (res.next()) {
+                HorarioYAct Hy = new HorarioYAct();
+                Hy.setIdA(res.getInt("IdHA"));
+                Hy.setCarneEstudiante(res.getInt("CarnetEstudiante"));
+                Hy.setActR(res.getString("ActRealizar"));
+                Hy.setObjetivo(res.getString("Objetivo"));
+                Hy.setMeta(res.getString("Meta"));
+                Hy.setDuracion(res.getInt("Duracion"));
+                Hy.setLunes(res.getString("Lunes"));
+                Hy.setMartes(res.getString("Martes"));
+                Hy.setMiercoles(res.getString("Miercoles"));
+                Hy.setJueves(res.getString("Jueves"));
+                Hy.setViernes(res.getString("Viernes"));
+                Hy.setSabado(res.getString("Sabado"));
+                Hy.setDomingo(res.getString("Domingo"));
+                Hy.setNombreEstudiante(res.getString("NombreEst"));
+                Hy.setEstadoS(res.getString("EstadoS"));
+                Hy.setEstado(res.getInt("estado"));
+                list.add(Hy);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return list;
+    }
     //Insertar HorasYAct
 
     public void insertarYAct(HorarioYAct co) throws Exception {
